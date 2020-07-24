@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+</head>
+<body>
+   <div>
+       <a href="{% url 'home' %}">
+           <h4>Hanzhi Dong`s Blog display</h4>
+       </a>
+   </div>
+    <hr>
+      <h3>{{ blog.title }}</h3>
+      <h3>{{ blog.author }}</h3>
+      <p>{{ blog.text }}</p>
+       <p>Blog Type:
+           <a href="{% url 'blogs_with_type' blog.blog_type.pk %}">
+               {{ blog.blog_type }}
+           </a>
+       </p>
+       <h3>{{ blog.created_date }}</h3>
+        <h3>{{ blog.published_date }}</h3>
+
+</body>
+</html>

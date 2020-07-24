@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysite</title>
+</head>
+<body>
+   <div>
+       <a href="{% url 'home' %}">
+           <h4>Hanzhi Dong`s Blog display</h4>
+       </a>
+   </div>
+
+   {% for blog in blogs %}
+       <a href="{% url 'blog_detail' blog.pk %}">
+           <h3>{{ blog.title }}</h3>
+       </a>
+
+       <p>{{ blog.text }}</p>
+       <br>
+       <br>
+
+   {% endfor %}
+</body>
+</html>
